@@ -15,9 +15,9 @@ function App() {
           <Col xs={11} md={9} lg={7}>
             <Card className="content-card text-white text-center border-0 p-3 p-md-5">
               <Card.Body>
-                <h1 className="display-1">Irina-Maria</h1>
-                <h2 className="display-4 text-gold">&</h2>
                 <h1 className="display-1">Tudor-Vladimir</h1>
+                <h2 className="display-4 text-gold">&</h2>
+                <h1 className="display-1">Irina-Maria</h1>
                 <p className="lead mt-3">Vă invităm cu drag să ne fiți alături!</p>
                 <hr className="my-4 border-light" />
                 <Countdown />
