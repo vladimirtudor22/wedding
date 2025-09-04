@@ -102,3 +102,16 @@
     width: 90%;
   }
 }
+.card-biserica-fundal {
+  background-image: url("./assets/church.svg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-restaurant-fundal {
+  background-image: url("./assets/restaurant.svg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
