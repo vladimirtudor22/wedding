@@ -34,6 +34,10 @@ const App: React.FC = () => {
           <Countdown />
         </section>
 
+        <Section id="detalii" title="Detalii">
+          <p>Detalii aici</p>
+        </Section>
+
         <Section id="poveste" title="Povestea Noastră">
           <p>
             Aici puteți scrie o scurtă descriere a poveștii voastre de dragoste.
