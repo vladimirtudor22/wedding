@@ -15,11 +15,11 @@ const Header: React.FC = () => {
           <a href="#acasa" onClick={() => setIsOpen(false)}>
             Acasă
           </a>
-          <a href="#Detalii" onClick={() => setIsOpen(false)}>
-            Detalii
-          </a>
           <a href="#poveste" onClick={() => setIsOpen(false)}>
             Povestea Noastră
+          </a>
+          <a href="#Detalii" onClick={() => setIsOpen(false)}>
+            Detalii
           </a>
           <a href="#confirmare" onClick={() => setIsOpen(false)}>
             Confirmă prezența
