@@ -33,6 +33,7 @@ const App: React.FC = () => {
           </p>
           <Countdown />
         </section>
+
         <Section id="poveste" title="Povestea Noastră">
           <p>
             Aici puteți scrie o scurtă descriere a poveștii voastre de dragoste.
@@ -41,9 +42,15 @@ const App: React.FC = () => {
             doriți. Acest text este doar un exemplu pentru a umple spațiul.
           </p>
         </Section>
+
         <Section id="detalii" title="Detalii Eveniment">
           <div className="details-container">
-            <div className="detail-card" data-aos="fade-right">
+            <p data-aos="fade-up" data-aos-delay="200">
+              El a găsit bug-ul în viața de burlac, ea a venit cu soluția. Acum
+              lansăm programul "O viață în doi" și vă vrem alături la petrecerea
+              de lansare – nunta noastră!
+            </p>
+            <div className="detail-card" data-aos="fade-in">
               <h3>Biserica</h3>
               <p>
                 <strong>Cununia religioasă</strong> va avea loc la ora{" "}
@@ -62,7 +69,7 @@ const App: React.FC = () => {
                 Vezi pe hartă
               </a>
             </div>
-            <div className="detail-card" data-aos="fade-left">
+            <div className="detail-card" data-aos="fade-in">
               <h3>Restaurantul</h3>
               <p>
                 <strong>Petrecerea</strong> va începe la ora{" "}
