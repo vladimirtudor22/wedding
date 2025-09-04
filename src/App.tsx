@@ -1,37 +1,59 @@
-import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
-import Countdown from './components/Countdown';
-import './App.css';
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "./App.css";
+import Header from "./components/Header";
+import Countdown from "./components/Countdown";
+import Section from "./components/Section";
+import ConfirmationForm from "./components/ConfirmationForm";
 
-import backgroundImage from './assets/background.png';
-import Header from './components/Header';
-// Am scos importul pentru 'logo' deoarece nu era utilizat
-// import logo from './assets/logo.png';
+const App: React.FC = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
-function App() {
   return (
-    <div className="hero-section" style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <div className="App">
       <Header />
-      <div>
-      <Container>
-        <Row className="justify-content-center align-items-center">
-          <Col xs={11} md={9} lg={7}>
-            <Card className="content-card text-white text-center border-0 p-3 p-md-5">
-              <Card.Body>
-                <h1 className="display-1">Tudor-Vladimir</h1>
-                <h2 className="display-4 text-gold">&</h2>
-                <h1 className="display-1">Irina-Maria</h1>
-                <p className="lead mt-3">Vă invităm cu drag să ne fiți alături!</p>
-                <hr className="my-4 border-light" />
-                <Countdown />
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
-      </div>
+      <main>
+        <section id="acasa" className="hero">
+          <h1 data-aos="fade-down">
+            Tudor-Vladimir <br />
+            <span className="goldText">&</span>
+            <br />
+            Irina-Maria
+          </h1>
+          <p data-aos="fade-up" data-aos-delay="200">
+            El a găsit bug-ul în viața de burlac, ea a venit cu soluția. Acum
+            lansăm programul "O viață în doi" și vă vrem alături la petrecerea
+            de lansare – nunta noastră!
+          </p>
+          <Countdown />
+        </section>
+
+        <Section id="poveste" title="Povestea Noastră">
+          <p>
+            Aici puteți scrie o scurtă descriere a poveștii voastre de dragoste.
+            Cum v-ați cunoscut, momente importante din relația voastră, cererea
+            în căsătorie, etc. Puteți adăuga și câteva poze reprezentative dacă
+            doriți. Acest text este doar un exemplu pentru a umple spațiul.
+          </p>
+        </Section>
+
+        <Section id="confirmare" title="Confirmă prezența">
+          <p>
+            Pentru a evita o eroare de sistem (și o criză de nervi a miresei),
+            te rugăm să confirmi prezența până la 01.09.2027. Suportul tău moral
+            este cel mai de preț cadou!
+          </p>
+          <ConfirmationForm />
+        </Section>
+      </main>
     </div>
   );
-}
+};
 
 export default App;

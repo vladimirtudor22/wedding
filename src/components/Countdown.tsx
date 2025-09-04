@@ -1,54 +1,49 @@
-// src/components/Countdown.tsx
-import React, { useState, useEffect } from 'react';
-import { JSX } from 'react/jsx-runtime';
+import React, { useState, useEffect } from "react";
+import "./Countdown.css";
 
-const Countdown = () => {
-    // ... (toată logica de calcul a timpului rămâne neschimbată) ...
-    const weddingDate = new Date('2028-10-04T18:00:00');
-    const calculateTimeLeft = () => {
-        const difference = +weddingDate - +new Date();
-        let timeLeft: { [key: string]: number } = {};
-        if (difference > 0) {
-            timeLeft = {
-                zile: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                ore: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                minute: Math.floor((difference / 1000 / 60) % 60),
-                secunde: Math.floor((difference / 1000) % 60)
-            };
-        }
-        return timeLeft;
-    };
-    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setTimeLeft(calculateTimeLeft());
-        }, 1000);
-        return () => clearTimeout(timer);
-    });
-    const timerComponents: JSX.Element[] = [];
-    Object.keys(timeLeft).forEach((interval) => {
-        if (!timeLeft[interval] && timeLeft[interval] !== 0) { return; }
-        timerComponents.push(
-            <div key={interval} className="text-center mx-2 mx-md-3">
-                <div className="fs-1 display-md-4 fw-bold">{timeLeft[interval]}</div>
-                <div className="fs-6 fs-md-5 text-uppercase">{interval}</div>
-            </div>
-        );
-    });
-    const funnyText = "Timp rămas până la deploy-ul final al proiectului 'Familia' și implementarea sistemului de suport emoțional permanent. ❤️";
+// Definește o interfață pentru obiectul de timp
+interface TimeLeft {
+  zile?: number;
+  ore?: number;
+  minute?: number;
+  secunde?: number;
+}
 
-    // Aici facem modificările
-    return (
-        <div>
-            {/* Am simplificat această secțiune pentru a se integra mai bine în card */}
-            <div className="d-flex justify-content-center my-3">
-                {timerComponents.length ? timerComponents : <span>E ziua cea mare!</span>}
-            </div>
-            <p className="mt-4 fst-italic" style={{ fontSize: '0.9rem', opacity: 0.9 }}>
-                {funnyText}
-            </p>
+const Countdown: React.FC = () => {
+  const calculateTimeLeft = () => {
+    const difference = +new Date("2027-10-04T00:00:00") - +new Date();
+    let timeLeft: TimeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        zile: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        ore: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minute: Math.floor((difference / 1000 / 60) % 60),
+        secunde: Math.floor((difference / 1000) % 60),
+      };
+    }
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+    return () => clearTimeout(timer);
+  });
+
+  return (
+    <div className="countdown" data-aos="fade-up">
+      {Object.entries(timeLeft).map(([unit, value]) => (
+        <div key={unit} className="countdown-item">
+          <div className="countdown-value">{value}</div>
+          <div className="countdown-unit">{unit}</div>
         </div>
-    );
+      ))}
+    </div>
+  );
 };
 
 export default Countdown;

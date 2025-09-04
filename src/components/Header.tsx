@@ -1,23 +1,34 @@
-import React from 'react';
-import { Navbar, Container, Nav, Image } from 'react-bootstrap';
-import logo from "../assets/logo.png"
+import React, { useState } from "react";
+import "./Header.css";
+import logo from "../assets/logo-dark.png";
+
 const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">
-            <Image src={logo} className='logoImageHeader'/>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="#home">Detalii</Nav.Link>
-            <Nav.Link href="#povestea-noastra">Povestea Noastră</Nav.Link>
-            <Nav.Link href="#confirma">Confirmă participare</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <header className="header">
+      <div className="header-container">
+        <div className="logo">
+          <img src={logo} alt="Logo" />
+        </div>
+        <nav className={`nav ${isOpen ? "nav-open" : ""}`}>
+          <a href="#acasa" onClick={() => setIsOpen(false)}>
+            Acasă
+          </a>
+          <a href="#poveste" onClick={() => setIsOpen(false)}>
+            Povestea Noastră
+          </a>
+          <a href="#confirmare" onClick={() => setIsOpen(false)}>
+            Confirmă prezența
+          </a>
+        </nav>
+        <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
+      </div>
+    </header>
   );
 };
 
