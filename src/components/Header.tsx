@@ -15,6 +15,9 @@ const Header: React.FC = () => {
           <a href="#acasa" onClick={() => setIsOpen(false)}>
             Acasă
           </a>
+          <a href="#detalii" onClick={() => setIsOpen(false)}>
+            Detalii
+          </a>
           <a href="#poveste" onClick={() => setIsOpen(false)}>
             Povestea Noastră
           </a>
