@@ -29,6 +29,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -79,4 +80,14 @@ body {
   .display-1 {
     font-size: 3.5rem;
   }
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 999999;
+}
+.logoImageHeader {
+  width: 70px;
 }

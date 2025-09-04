@@ -4,12 +4,15 @@ import Countdown from './components/Countdown';
 import './App.css';
 
 import backgroundImage from './assets/background.png';
+import Header from './components/Header';
 // Am scos importul pentru 'logo' deoarece nu era utilizat
 // import logo from './assets/logo.png';
 
 function App() {
   return (
     <div className="hero-section" style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <Header />
+      <div>
       <Container>
         <Row className="justify-content-center align-items-center">
           <Col xs={11} md={9} lg={7}>
@@ -26,6 +29,7 @@ function App() {
           </Col>
         </Row>
       </Container>
+      </div>
     </div>
   );
 }
