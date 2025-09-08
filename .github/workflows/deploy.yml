@@ -22,5 +22,6 @@ jobs:
             cd ~/Programs/wedding
             git pull
             npm i
+            npm run build
             sudo systemctl restart wedding.service
             sudo systemctl status wedding.service

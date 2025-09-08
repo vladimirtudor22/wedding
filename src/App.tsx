@@ -27,9 +27,10 @@ const App: React.FC = () => {
             Irina-Maria
           </h1>
           <p data-aos="fade-up" data-aos-delay="200">
-            El a găsit bug-ul în viața de burlac, ea a venit cu soluția. Acum
-            lansăm programul "O viață în doi" și vă vrem alături la petrecerea
-            de lansare – nunta noastră!
+            Am creat un "API" (Alianță Permanentă a Iubirii) și vă invităm să
+            fiți primii "utilizatori". Vă așteptăm la nunta noastră, un
+            eveniment "open-source", unde oricine poate contribui la fericirea
+            noastră.
           </p>
           <Countdown />
         </section>
