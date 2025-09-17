@@ -18,7 +18,9 @@
   background-position: center;
   background-attachment: fixed;
 }
-
+.homeContent {
+  max-width: 900px;
+}
 .hero h1 {
   font-family: "Imperial Script", cursive;
   font-size: 5rem;

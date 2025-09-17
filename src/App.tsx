@@ -20,19 +20,21 @@ const App: React.FC = () => {
       <Header />
       <main>
         <section id="acasa" className="hero">
-          <h1 data-aos="fade-down">
-            Tudor-Vladimir <br />
-            <span className="goldText">&</span>
-            <br />
-            Irina-Maria
-          </h1>
-          <p data-aos="fade-up" data-aos-delay="200">
-            Am creat un "API" (Alianță Permanentă a Iubirii) și vă invităm să
-            fiți primii "utilizatori". Vă așteptăm la nunta noastră, un
-            eveniment "open-source", unde oricine poate contribui la fericirea
-            noastră.
-          </p>
-          <Countdown />
+          <div className="homeContent">
+            <h1 data-aos="fade-down">
+              Tudor-Vladimir <br />
+              <span className="goldText">&</span>
+              <br />
+              Irina-Maria
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="200">
+              Am creat un "API" (Alianță Permanentă a Iubirii) și vă invităm să
+              fiți primii "utilizatori". Vă așteptăm la nunta noastră, un
+              eveniment "open-source", unde oricine poate contribui la fericirea
+              noastră.
+            </p>
+            <Countdown />
+          </div>
         </section>
         <Section id="poveste" title="Povestea Noastră">
           <p>
